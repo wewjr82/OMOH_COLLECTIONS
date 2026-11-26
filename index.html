@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Omoh Collections | Luxury Mobile Beauty & Perfumery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #12071A;
+            --bg-card: #251236;
+            --border-purple: #3D1C59;
+            --pink-neon: #EC4899;
+            --pink-bright: #F472B6;
+            --pink-soft: #FCE7F3;
+            --text-main: #F3E8FF;
+            --text-sub: #D8B4FE;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-main); }
+
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .purple-pink-gradient {
+            background: linear-gradient(135deg, #EC4899 0%, #C084FC 55%, #F472B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #EC4899 0%, #9333EA 100%);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        .btn-gradient:active { transform: scale(0.97); }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            background: rgba(236, 72, 153, 0.15);
+            color: var(--pink-bright);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+        .announcement-bar {
+            background: linear-gradient(90deg, #12071A, #251236, #12071A);
+            text-align: center;
+            padding: 8px 12px;
+            font-size: 0.7rem;
+            border-bottom: 1px solid rgba(236, 72, 153, 0.25);
+            color: var(--pink-soft);
+        }
+
+        header { position: sticky; top: 0; z-index: 40; background: rgba(18, 7, 26, 0.95); border-bottom: 1px solid var(--border-purple); backdrop-filter: blur(10px); }
+        .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+
+        .brand-logo { text-decoration: none; display: flex; flex-direction: column; }
+        .brand-logo span:first-child { font-size: 1.35rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+        .brand-logo span:last-child { font-size: 0.55rem; letter-spacing: 1.5px; color: var(--pink-bright); text-transform: uppercase; margin-top: -3px; }
+
+        .menu-toggle { background: transparent; border: none; color: #fff; font-size: 1.4rem; padding: 10px; cursor: pointer; }
+
+        nav.mobile-drawer {
+            display: none;
+            flex-direction: column;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-purple);
+            padding: 16px;
+            gap: 12px;
+        }
+        nav.mobile-drawer.open { display: flex; }
+        nav.mobile-drawer a { color: var(--text-sub); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        nav.desktop-nav { display: none; gap: 24px; align-items: center; }
+        nav.desktop-nav a { color: var(--text-sub); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; transition: color 0.2s; }
+        nav.desktop-nav a:hover { color: var(--pink-neon); }
+
+        .hero { text-align: center; padding: 40px 16px 50px; background: radial-gradient(circle at top, #251236 0%, #12071A 80%); }
+        .hero h1 { font-size: 2.35rem; margin: 14px 0; color: #fff; line-height: 1.15; }
+        .hero p { max-width: 600px; margin: 0 auto 24px; color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; }
+
+        .hero-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 400px; margin: 0 auto; }
+        .btn-lg { min-height: 48px; padding: 14px 24px; border-radius: 9999px; font-size: 0.85rem; text-transform: uppercase; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; }
+
+        .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border-purple); }
+        .pillar-item { background: rgba(37, 18, 54, 0.6); border: 1px solid var(--border-purple); border-radius: 12px; padding: 12px 8px; text-align: center; }
+        .pillar-item h4 { font-size: 1.25rem; color: #fff; }
+        .pillar-item p { font-size: 0.7rem; color: var(--pink-bright); margin-top: 2px; }
+
+        .section-padding { padding: 48px 0; }
+        .section-header { text-align: center; margin-bottom: 24px; }
+        .section-header h2 { font-size: 2rem; color: #fff; margin-top: 6px; }
+        .section-sub { color: var(--text-sub); font-size: 0.875rem; max-width: 560px; margin: 8px auto 0; line-height: 1.5; }
+
+        .filter-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; margin-top: 16px; scrollbar-width: none; }
+        .filter-wrapper::-webkit-scrollbar { display: none; }
+        .filter-tabs { display: inline-flex; gap: 8px; padding: 0 4px; }
+        .tab-btn { background: var(--bg-card); border: 1px solid var(--border-purple); color: var(--text-sub); padding: 10px 18px; border-radius: 9999px; font-size: 0.775rem; text-transform: uppercase; font-weight: 700; white-space: nowrap; cursor: pointer; }
+        .tab-btn.active { background: linear-gradient(135deg, #EC4899 0%, #9333EA 100%); color: #fff; border-color: transparent; }
+
+        .cards-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-purple); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .card-price { font-size: 1.4rem; font-weight: 700; color: #fff; }
+        .card h3 { font-size: 1.35rem; color: #fff; margin-bottom: 6px; }
+        .card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; margin-bottom: 16px; }
+        .card-footer { padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-sub); }
+        .btn-sm { min-height: 40px; padding: 8px 16px; border-radius: 8px; background: rgba(236, 72, 153, 0.2); border: 1px solid rgba(236, 72, 153, 0.4); color: var(--pink-bright); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+
+        /* Curated Hair Showcase */
+        .showcase-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+        .media-card { background: var(--bg-card); border: 1px solid var(--border-purple); border-radius: 16px; overflow: hidden; }
+        .media-card img, .media-card video { width: 100%; height: 260px; object-fit: cover; display: block; background: #180924; }
+        .media-caption { padding: 14px 16px; }
+        .media-caption h3 { font-size: 1.25rem; color: #fff; margin-bottom: 4px; }
+        .media-caption p { font-size: 0.8rem; color: var(--text-sub); }
+
+        .ig-banner {
+            margin-top: 24px;
+            background: rgba(37, 18, 54, 0.85);
+            border: 1px solid rgba(236, 72, 153, 0.35);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .whatsapp-float { position: fixed; bottom: 16px; right: 16px; z-index: 50; width: 56px; height: 56px; border-radius: 50%; background: #10B981; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+
+        @media (min-width: 640px) {
+            .hero-actions { flex-direction: row; max-width: none; }
+            .hero-actions .btn-lg { width: auto; }
+            .pillars { grid-template-columns: repeat(4, 1fr); }
+            .cards-grid, .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+            .filter-tabs { flex-wrap: wrap; justify-content: center; }
+        }
+        @media (min-width: 768px) {
+            .menu-toggle { display: none; }
+            nav.desktop-nav { display: flex; }
+            nav.mobile-drawer { display: none !important; }
+        }
+        @media (min-width: 1024px) {
+            .cards-grid { grid-template-columns: repeat(3, 1fr); }
+            .showcase-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero h1 { font-size: 3.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/2348000000000?text=Hello%20Omoh%20Collections!%20I%20would%20like%20to%20book%20a%20home%20service%20or%20order%20fragrances."
+       target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="announcement-bar">
+        <i class="fa-solid fa-house-user" style="color: var(--pink-neon); margin-right: 4px;"></i>
+        Exclusive Home Services • Prices in Naira (₦) • Fast Dispatch
+    </div>
+
+    <header>
+        <div class="container nav-wrap">
+            <a href="#" class="brand-logo">
+                <span>OMOH <span class="purple-pink-gradient">COLLECTIONS</span></span>
+                <span>Hair • Lashes • Nails • Perfumes</span>
+            </a>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+
+            <nav class="desktop-nav">
+                <a href="#services">Services</a>
+                <a href="#showcase">Hair Reels</a>
+                <a href="#policy">Policies</a>
+                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </nav>
+
+            <a href="https://wa.me/2348000000000?text=Hello%20Omoh%20Collections!%20I%20want%20to%20make%20an%20inquiry."
+               target="_blank" rel="noopener noreferrer" class="btn-lg btn-gradient desktop-nav" style="display: flex; font-size: 0.75rem; padding: 10px 20px; min-height: auto; width: auto;">
+                <i class="fa-solid fa-calendar-check"></i> Book Call
+            </a>
+        </div>
+
+        <nav class="mobile-drawer" id="mobileDrawer">
+            <a href="#services" onclick="toggleMenu()">Services Menu</a>
+            <a href="#showcase" onclick="toggleMenu()">Hair Showcase</a>
+            <a href="#policy" onclick="toggleMenu()">Home Call Policies</a>
+            <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @omoh22_collections</a>
+            <a href="https://wa.me/2348000000000?text=Hello%20Omoh%20Collections!" target="_blank" rel="noopener noreferrer" style="color: var(--pink-bright);"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="badge"><i class="fa-solid fa-car-side"></i> Exclusive Home Call Service</span>
+            <h1>Pampered In The Comfort Of <br/><span class="purple-pink-gradient">Your Own Home</span></h1>
+            <p>Mobile wig frontal installs, knotless braids, lash extensions, acrylic nails, plus signature body mists, perfumes, roll-ons, body sprays, and perfume oils.</p>
+
+            <div class="hero-actions">
+                <a href="https://wa.me/2348000000000?text=Hello%20Omoh%20Collections!%20I%20want%20to%20book%20a%20home%20appointment." target="_blank" rel="noopener noreferrer" class="btn-lg btn-gradient">
+                    <i class="fa-regular fa-calendar-alt"></i> Book Home Appointment
+                </a>
+                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-lg" style="background: var(--bg-card); border: 1px solid var(--border-purple); color: #fff;">
+                    <i class="fa-brands fa-instagram" style="color: var(--pink-bright);"></i> @omoh22_collections
+                </a>
+            </div>
+
+            <div class="pillars">
+                <div class="pillar-item"><h4>Hair</h4><p>Installs & Braids</p></div>
+                <div class="pillar-item"><h4>Lashes</h4><p>Classic & Volume</p></div>
+                <div class="pillar-item"><h4>Nails</h4><p>Acrylics & Art</p></div>
+                <div class="pillar-item"><h4>Perfumes</h4><p>Mists, Oils & Sprays</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Mobile Service Menu</span>
+                <h2>Services & Perfumes</h2>
+
+                <div class="filter-wrapper">
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" onclick="filterCategory('all', this)">All Offerings</button>
+                        <button class="tab-btn" onclick="filterCategory('hair', this)">Hair</button>
+                        <button class="tab-btn" onclick="filterCategory('lashes', this)">Lashes</button>
+                        <button class="tab-btn" onclick="filterCategory('nails', this)">Nails</button>
+                        <button class="tab-btn" onclick="filterCategory('fragrance', this)">Fragrances ✨</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="catalog-grid">
+                <div class="card" data-cat="hair">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Hair</span>
+                            <span class="card-price font-serif">₦25,000+</span>
+                        </div>
+                        <h3>Lace Frontal / Closure Install</h3>
+                        <p>Bleaching knots, customizing hairline, braid-down, secure install, and sleek styling at your home space.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-house-user" style="color: var(--pink-bright);"></i> Home Service</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20book%20a%20Lace%20Frontal/Closure%20Install" target="_blank" rel="noopener noreferrer" class="btn-sm">Book <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="hair">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Hair</span>
+                            <span class="card-price font-serif">₦20,000+</span>
+                        </div>
+                        <h3>Knotless Braids & Wig Revamp</h3>
+                        <p>Neat, light-weight knotless braids or complete wig wash, deep condition, and restyling.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-house-user" style="color: var(--pink-bright);"></i> Home Service</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20book%20Knotless%20Braids/Wig%20Revamp" target="_blank" rel="noopener noreferrer" class="btn-sm">Book <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="lashes">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Lashes</span>
+                            <span class="card-price font-serif">₦18,000</span>
+                        </div>
+                        <h3>Classic & Volume Lash Sets</h3>
+                        <p>Customized lash extensions mapped to your eye shape for effortless volume and long retention.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-house-user" style="color: var(--pink-bright);"></i> Home Service</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20book%20Lash%20Extensions" target="_blank" rel="noopener noreferrer" class="btn-sm">Book <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="nails">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Nails</span>
+                            <span class="card-price font-serif">₦15,000+</span>
+                        </div>
+                        <h3>Acrylic Full Set & Nail Art</h3>
+                        <p>Cuticle prep, acrylic extension building, shape sculpting, gel color, and custom charm art.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-house-user" style="color: var(--pink-bright);"></i> Home Service</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20book%20an%20Acrylic%20Nail%20Set" target="_blank" rel="noopener noreferrer" class="btn-sm">Book <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="fragrance" id="fragrance">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Fragrance</span>
+                            <span class="card-price font-serif">₦6,500</span>
+                        </div>
+                        <h3>Signature Body Mists</h3>
+                        <p>Light, sweet, and floral everyday body mists for continuous hydration and scent layer renewal.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-truck-fast" style="color: var(--pink-bright);"></i> Fast Delivery</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20order%20Signature%20Body%20Mists" target="_blank" rel="noopener noreferrer" class="btn-sm">Order <i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="fragrance">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Fragrance</span>
+                            <span class="card-price font-serif">₦12,000</span>
+                        </div>
+                        <h3>Luxury Bottled Perfumes</h3>
+                        <p>Rich Eau de Parfum sprays crafted with warm vanilla, amber, floral notes, and deep projection.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-truck-fast" style="color: var(--pink-bright);"></i> Fast Delivery</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20order%20Luxury%20Bottled%20Perfumes" target="_blank" rel="noopener noreferrer" class="btn-sm">Order <i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="fragrance">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Fragrance</span>
+                            <span class="card-price font-serif">₦4,500</span>
+                        </div>
+                        <h3>Portable Roll-On Scents</h3>
+                        <p>Handbag-friendly concentrated oil roll-ons for quick pulse-point touch-ups throughout your day.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-truck-fast" style="color: var(--pink-bright);"></i> Fast Delivery</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20order%20Portable%20Roll-On%20Perfumes" target="_blank" rel="noopener noreferrer" class="btn-sm">Order <i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="fragrance">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Fragrance</span>
+                            <span class="card-price font-serif">₦4,500</span>
+                        </div>
+                        <h3>Refreshing Body Sprays</h3>
+                        <p>Invigorating full-body deodorant sprays to stay crisp and aromatic all day long.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-truck-fast" style="color: var(--pink-bright);"></i> Fast Delivery</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20order%20Refreshing%20Body%20Sprays" target="_blank" rel="noopener noreferrer" class="btn-sm">Order <i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-cat="fragrance">
+                    <div>
+                        <div class="card-top">
+                            <span class="badge">Fragrance</span>
+                            <span class="card-price font-serif">₦5,000</span>
+                        </div>
+                        <h3>Concentrated Perfume Oils</h3>
+                        <p>Pure, alcohol-free perfume oils designed for deep duration on skin and long scent trails.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><i class="fa-solid fa-truck-fast" style="color: var(--pink-bright);"></i> Fast Delivery</span>
+                        <a href="https://wa.me/2348000000000?text=I%20want%20to%20order%20Concentrated%20Perfume%20Oils" target="_blank" rel="noopener noreferrer" class="btn-sm">Order <i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Hair Showcase (Tap-to-Play, No Autoplay) -->
+    <section id="showcase" class="section-padding" style="background: rgba(37, 18, 54, 0.35); border-top: 1px solid var(--border-purple);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fa-solid fa-film"></i> Selected Hair Preview</span>
+                <h2>Hair & Wig Highlights</h2>
+                <p class="section-sub">Tap any video to play on demand so visitors don't burn mobile data automatically.</p>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="media-card">
+                    <img src="image/34726_2_11zon.jpg" alt="Curly dark bob wig look" loading="lazy">
+
+                    <div class="media-caption">
+                        <h3>Curly Bob Look</h3>
+                        <p>Defined curls and clean styling reference.</p>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <video controls preload="metadata" playsinline>
+                        <source src="vids/34724-compressed.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">
+                        <h3>Curled Colored Bundles</h3>
+                        <p>Rich burgundy/red wave & curl texture preview.</p>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <video controls preload="metadata" playsinline>
+                        <source src="vids/34714-compressed.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">
+                        <h3>Sleek Colored Bob Finish</h3>
+                        <p>Smooth finish and movement check.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ig-banner">
+                <p style="color: #fff; font-weight: 600; margin-bottom: 10px;">Want to see more hair, lash, nail, and perfume updates?</p>
+                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-sm" style="padding: 10px 18px;">
+                    <i class="fa-brands fa-instagram"></i> Visit @omoh22_collections on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="policy" class="section-padding" style="background: var(--bg-card); border-top: 1px solid var(--border-purple);">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Important Rules</span>
+            <h2 style="font-size: 2rem; margin: 8px 0 20px; color: #fff;">Home Service Policies</h2>
+            <div style="text-align: left; background: var(--bg-dark); padding: 20px; border-radius: 16px; border: 1px solid var(--border-purple); font-size: 0.875rem; line-height: 1.6; color: var(--text-sub);">
+                <p style="margin-bottom: 12px;"><strong style="color: #fff;">• Transportation Fee:</strong> Mobile appointment travel costs are calculated based on your specific home location and added transparently to your total.</p>
+                <p style="margin-bottom: 12px;"><strong style="color: #fff;">• Prep Instructions:</strong> Please ensure your hair is washed and blown out before appointment start time, unless wash services were added in advance.</p>
+                <p><strong style="color: #fff;">• Booking Deposit:</strong> A deposit via bank transfer is required to lock in your date and time slot.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 24px 0; text-align: center; font-size: 0.775rem; color: var(--text-sub); border-top: 1px solid var(--border-purple);">
+        <div class="container">
+            <p>© Omoh Collections. Mobile Beauty & Perfumery • <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" style="color: var(--pink-bright); text-decoration: none;">@omoh22_collections</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const icon = document.getElementById('menu-icon');
+            drawer.classList.toggle('open');
+            if (drawer.classList.contains('open')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        }
+
+        function filterCategory(category, element) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
