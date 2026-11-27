@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Omoh Collections | Luxury Mobile Beauty & Perfumery</title>
+    <title>Omoh Collections | Luxury Mobile Beauty Services & Perfumery in Nigeria (₦)</title>
+    <meta name="description" content="Omoh Collections offers mobile home-service frontal wig installs, knotless braids, lash extensions, acrylic nails, plus signature perfumes, body mists, roll-ons, and perfume oils in Nigeria (₦).">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://omohcollections.com/">
+
+    <!-- Open Graph / WhatsApp, Instagram & Facebook Link Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omohcollections.com/">
+    <meta property="og:title" content="Omoh Collections | Mobile Beauty Services & Perfumes (₦)">
+    <meta property="og:description" content="Mobile home-service hair installs, braids, lashes, nails, and authentic bottled fragrances. Book or order directly on WhatsApp.">
+    <meta property="og:image" content="https://omohcollections.com/image/35224.jpg">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Omoh Collections | Mobile Beauty & Perfumes">
+    <meta name="twitter:description" content="Mobile hair, lash, and nail services plus luxury perfume oils, body mists, and EDPs in Nigeria.">
+    <meta name="twitter:image" content="https://omohcollections.com/image/35224.jpg">
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Local SEO Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Omoh Collections",
+      "description": "Exclusive home call service for lace frontal installs, knotless braids, lash extensions, acrylic nails, and luxury Arabian and designer perfumes in Nigeria.",
+      "currenciesAccepted": "NGN",
+      "priceRange": "₦4500 - ₦25000",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nigeria"
+      },
+      "sameAs": [
+        "https://www.instagram.com/omoh22_collections/",
+        "https://www.facebook.com/"
+      ]
+    }
+    </script>
 
     <style>
         :root {
@@ -113,6 +152,45 @@
         .tab-btn { background: var(--bg-card); border: 1px solid var(--border-purple); color: var(--text-sub); padding: 10px 18px; border-radius: 9999px; font-size: 0.775rem; text-transform: uppercase; font-weight: 700; white-space: nowrap; cursor: pointer; }
         .tab-btn.active { background: linear-gradient(135deg, #EC4899 0%, #9333EA 100%); color: #fff; border-color: transparent; }
 
+        /* Featured Scents Horizontal Scroll Styling */
+        .featured-scents-wrap { margin-top: 28px; text-align: left; }
+        .featured-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 12px;
+            scrollbar-width: none;
+        }
+        .featured-scroll::-webkit-scrollbar { display: none; }
+        .featured-card {
+            min-width: 175px;
+            max-width: 175px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .featured-img-box {
+            width: 100%;
+            height: 140px;
+            background: #180924;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .featured-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-card h4 { font-size: 0.95rem; color: #fff; margin-bottom: 2px; }
+        .featured-card p { font-size: 0.725rem; color: var(--text-sub); margin-bottom: 10px; }
+
         .cards-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
         .card { background: var(--bg-card); border: 1px solid var(--border-purple); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
         .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
@@ -122,7 +200,6 @@
         .card-footer { padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-sub); }
         .btn-sm { min-height: 40px; padding: 8px 16px; border-radius: 8px; background: rgba(236, 72, 153, 0.2); border: 1px solid rgba(236, 72, 153, 0.4); color: var(--pink-bright); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 
-        /* Curated Hair Showcase */
         .showcase-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
         .media-card { background: var(--bg-card); border: 1px solid var(--border-purple); border-radius: 16px; overflow: hidden; }
         .media-card img, .media-card video { width: 100%; height: 260px; object-fit: cover; display: block; background: #180924; }
@@ -185,9 +262,10 @@
 
             <nav class="desktop-nav">
                 <a href="#services">Services</a>
+                <a href="#featured-scents">Best Sellers</a>
                 <a href="#showcase">Hair Reels</a>
                 <a href="#policy">Policies</a>
-                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <!-- <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer">Instagram</a> -->
             </nav>
 
             <a href="https://wa.me/2349032069067?text=Hello%20Omoh%20Collections!%20I%20want%20to%20make%20an%20inquiry."
@@ -198,10 +276,11 @@
 
         <nav class="mobile-drawer" id="mobileDrawer">
             <a href="#services" onclick="toggleMenu()">Services Menu</a>
+            <a href="#featured-scents" onclick="toggleMenu()">Best Selling Scents</a>
             <a href="#showcase" onclick="toggleMenu()">Hair Showcase</a>
             <a href="#policy" onclick="toggleMenu()">Home Call Policies</a>
-            <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @omoh22_collections</a>
-            <a href="https://wa.me/2349032069067?text=Hello%20Omoh%20Collections!" target="_blank" rel="noopener noreferrer" style="color: var(--pink-bright);"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+            <!-- <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @omoh22_collections</a>
+            <a href="https://wa.me/2349032069067?text=Hello%20Omoh%20Collections!" target="_blank" rel="noopener noreferrer" style="color: var(--pink-bright);"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a> -->
         </nav>
     </header>
 
@@ -215,9 +294,12 @@
                 <a href="https://wa.me/2349032069067?text=Hello%20Omoh%20Collections!%20I%20want%20to%20book%20a%20home%20appointment." target="_blank" rel="noopener noreferrer" class="btn-lg btn-gradient">
                     <i class="fa-regular fa-calendar-alt"></i> Book Home Appointment
                 </a>
-                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-lg" style="background: var(--bg-card); border: 1px solid var(--border-purple); color: #fff;">
+                <!-- <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-lg" style="background: var(--bg-card); border: 1px solid var(--border-purple); color: #fff;">
                     <i class="fa-brands fa-instagram" style="color: var(--pink-bright);"></i> @omoh22_collections
                 </a>
+                <a href="https://www.facebook.com/omohcollections" target="_blank" rel="noopener noreferrer" class="btn-lg" style="background: var(--bg-card); border: 1px solid var(--border-purple); color: #fff;">
+                    <i class="fa-brands fa-facebook" style="color: var(--pink-bright);"></i> @omoh22_collections
+                </a> -->
             </div>
 
             <div class="pillars">
@@ -242,6 +324,88 @@
                         <button class="tab-btn" onclick="filterCategory('lashes', this)">Lashes</button>
                         <button class="tab-btn" onclick="filterCategory('nails', this)">Nails</button>
                         <button class="tab-btn" onclick="filterCategory('fragrance', this)">Fragrances ✨</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrated Featured Fragrance Row (Mobile Horizontal Scroll) -->
+            <div class="featured-scents-wrap" id="featured-scents">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span class="badge"><i class="fa-solid fa-fire"></i> Best Sellers In Stock</span>
+                    <span style="font-size: 0.725rem; color: var(--text-sub);">Swipe <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                
+                <div class="featured-scroll">
+                    <!-- Item 1: Lattafa Asad -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35223.jpg" alt="Lattafa Asad Perfume" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Lattafa Asad</h4>
+                            <p>Black & Gold EDP</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Lattafa%20Asad%20Perfume" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
+                    </div>
+
+                    <!-- Item 2: Optimystic Her -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35224.jpg" alt="Optimystic Her Perfume" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Optimystic Her</h4>
+                            <p>Gold Edition Box Set</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Optimystic%20Her%20Perfume" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
+                    </div>
+
+                    <!-- Item 3: Giorgio Pink / Black -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35228.jpg" alt="Giorgio Pink and Black Perfumes" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Giorgio Pink/Black</h4>
+                            <p>Special Edition 100ml</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Giorgio%20Pink/Black%20Perfume" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
+                    </div>
+
+                    <!-- Item 4: Philos Series -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35227.jpg" alt="Philos Perfume Collection" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Philos Series</h4>
+                            <p>Opus, Rosso & Centro</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Philos%20Series%20Perfume" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
+                    </div>
+
+                    <!-- Item 5: Atlantis -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35225.jpg" alt="Atlantis Perfume" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Atlantis EDP</h4>
+                            <p>Asdaaf Shell Bottle</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Atlantis%20Perfume" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
+                    </div>
+
+                    <!-- Item 6: Tesori d'Oriente -->
+                    <div class="featured-card">
+                        <div>
+                            <div class="featured-img-box">
+                                <img src="image/35226.jpg" alt="Tesori d'Oriente Body Spray" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-bottle-droplet\' style=\'color:var(--pink-bright);font-size:1.5rem;\'></i>'">
+                            </div>
+                            <h4>Tesori d'Oriente</h4>
+                            <p>Aromatic Body Spray</p>
+                        </div>
+                        <a href="https://wa.me/2349032069067?text=I%20want%20to%20order%20Tesori%20d'Oriente%20Body%20Spray" target="_blank" rel="noopener noreferrer" class="btn-sm" style="width:100%; justify-content:center;">Order</a>
                     </div>
                 </div>
             </div>
@@ -385,7 +549,7 @@
         </div>
     </section>
 
-    <!-- Curated Hair Showcase (Tap-to-Play, No Autoplay) -->
+    <!-- Curated Hair Showcase -->
     <section id="showcase" class="section-padding" style="background: rgba(37, 18, 54, 0.35); border-top: 1px solid var(--border-purple);">
         <div class="container">
             <div class="section-header">
@@ -397,7 +561,6 @@
             <div class="showcase-grid">
                 <div class="media-card">
                     <img src="image/34726_2_11zon.jpg" alt="Curly dark bob wig look" loading="lazy">
-
                     <div class="media-caption">
                         <h3>Curly Bob Look</h3>
                         <p>Defined curls and clean styling reference.</p>
@@ -426,11 +589,16 @@
             </div>
 
             <div class="ig-banner">
-                <p style="color: #fff; font-weight: 600; margin-bottom: 10px;">Want to see more hair, lash, nail, and perfume updates?</p>
-                <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-sm" style="padding: 10px 18px;">
-                    <i class="fa-brands fa-instagram"></i> Visit @omoh22_collections on Instagram
-                </a>
-            </div>
+    <p style="color: #fff; font-weight: 600; margin-bottom: 12px;">Want to see more hair, lash, nail, and fragrance updates?</p>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" class="btn-sm" style="padding: 10px 18px;">
+            <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/omohcollections" target="_blank" rel="noopener noreferrer" class="btn-sm" style="padding: 10px 18px; background: rgba(59, 130, 246, 0.2); border-color: rgba(59, 130, 246, 0.4); color: #60A5FA;">
+            <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+    </div>
+</div>
         </div>
     </section>
 
@@ -448,7 +616,7 @@
 
     <footer style="padding: 24px 0; text-align: center; font-size: 0.775rem; color: var(--text-sub); border-top: 1px solid var(--border-purple);">
         <div class="container">
-            <p>© Omoh Collections. Mobile Beauty & Perfumery • <a href="https://www.instagram.com/omoh22_collections/" target="_blank" rel="noopener noreferrer" style="color: var(--pink-bright); text-decoration: none;">@omoh22_collections</a></p>
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Omoh Collections. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -477,6 +645,15 @@
                     card.style.display = 'none';
                 }
             });
+
+            const featuredRow = document.getElementById('featured-scents');
+            if (featuredRow) {
+                if (category === 'all' || category === 'fragrance') {
+                    featuredRow.style.display = 'block';
+                } else {
+                    featuredRow.style.display = 'none';
+                }
+            }
         }
     </script>
 </body>
